@@ -9,8 +9,11 @@ public class Sort_util {
             obj.selectionSort(array);
         }else if(chooseAlg == 2){
             obj.shellSort(array);
-        }else if(chooseAlg == 3){
+        }else if(chooseAlg == 3) {
             obj.insertionSort(array);
+        }else if(chooseAlg == 4){
+            obj.bubbleSort(array);
+
         }else{
             System.out.println("Invalid choose of algorithm(1,2,3): ");
         }
@@ -35,3 +38,4 @@ public class Sort_util {
         return array;
     }
 }
+

@@ -8,8 +8,6 @@ public class Sort {
         * you cannot create a object
         * */
 //        int[] sample = Sort_util.randomArray(10);
-
-
         /*
         * when randomArray() is non-static
         * you have to create an object of that class
@@ -20,7 +18,7 @@ public class Sort {
         System.out.println("Before sorting: ");
         Sort_util.printArray(array);  //print that array
 
-        Sort_util.performAlgorithm(array, sample, 3);
+        Sort_util.performAlgorithm(array, sample, 4);
 
         System.out.println("After sorting: ");
         Sort_util.printArray(array);
@@ -89,4 +87,23 @@ public class Sort {
             }
         }
     }
+
+    public void bubbleSort(int[] array){
+        boolean flag = true;
+        for (int i=0;i<array.length-1;i++){
+            flag = false;
+            for(int j=0;j<array.length-i-1;j++){
+                if(array[j]>array[j+1]){
+
+                    int tmp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = tmp;
+                    flag = true;
+                }
+            }
+            if(flag == false)
+                break;
+        }
+    }
 }
+
