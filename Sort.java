@@ -7,7 +7,7 @@ public class Sort {
         * when randomArray is static
         * you cannot create a object
         * */
-//        int[] sample = test.randomArray(10);
+//        int[] sample = Sort_util.randomArray(10);
 
 
         /*
@@ -20,19 +20,25 @@ public class Sort {
         System.out.println("Before sorting: ");
         Sort_util.printArray(array);  //print that array
 
-        long start = System.nanoTime();
-//        sample.selectionSort(array);
-//        sample.shellSort(array);
-        sample.insertionSort(array);
-        long end = System.nanoTime();
-        System.out.println("spent time ms: " + (end-start)/Math.pow(10, 6));
+        Sort_util.performAlgorithm(array, sample, 3);
 
         System.out.println("After sorting: ");
         Sort_util.printArray(array);
 
     }
 
-    private void selectionSort(int[] array) {
+
+    /* write it in the utility */
+//    private void performAlgorithm(int[] array, Sort obj){
+//        long start = System.nanoTime();
+////        obj.selectionSort(array);
+////        obj.shellSort(array);
+//        obj.insertionSort(array);
+//        long end = System.nanoTime();
+//        System.out.println("spent time ms: " + (end-start)/Math.pow(10, 6));
+//    }
+
+    public void selectionSort(int[] array) {
         for (int k=0;k<array.length-1; k++){
             int min_idx = k;
             for(int j=k+1;j<array.length;j++){
@@ -46,7 +52,7 @@ public class Sort {
         }
     }
 
-    public static void insertionSort(int[] array) {
+    public void insertionSort(int[] array) {
         int j;
         for (int i=1;i<array.length;i++){
             j = i;
@@ -60,7 +66,7 @@ public class Sort {
         }
     }
 
-    private void shellSort(int[] array){
+    public void shellSort(int[] array){
         int length = array.length;
         if (length <= 1) {
             return;
@@ -83,6 +89,4 @@ public class Sort {
             }
         }
     }
-
-
 }
